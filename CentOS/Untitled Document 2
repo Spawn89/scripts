@@ -1,0 +1,14 @@
+
+sudo yum update -y && yum upgrade
+yum isntall -y wget ssh mc htop fail2ban
+sh installApache.sh
+
+ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
+
+
+
+sudo yum install  -y php php-mysql
+sudo systemctl restart httpd.service
+sudo yum install -y php-fpm
+
+sh firewallInstall.sh
